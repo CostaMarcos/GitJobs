@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+service IssueService {
+    rpc GetIssue(Empty) returns (Empty) {}
+}
+
+message Empty {}
