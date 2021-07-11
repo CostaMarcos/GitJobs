@@ -1,17 +1,39 @@
 const express = require('express');
 const issue = require('./issue');
 const cors = require('cors');
-
 const app = express();
-app.use(cors());
+const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+
+
+
+dotenv.config();
+
+app.use(cors(), bodyParser.json());
 
 app.get('/issues', (req, res, next) => {
-    issue.GetIssue(null,
-    () => {
-        res.status(200).send({ ok: 'ok' });
+    issue.GetIssue(null, (err, data) => {
+        if(err){
+            res.status(500).send({ error: 'Internal error' });
+        }
+        else {
+            console.log(data);
+            res.json(data);
+        }
     });
 });
 
-app.listen(3000, () => {
-    console.log('Server on port: http://localhost:3000');
+app.post('/issues', (req, res, next) => {
+    issue.CreateIssue(req.body, (err, data) => {
+        if(err){
+            res.status(500).send({ error: 'Internal error' })
+        }
+        else {
+            res.json(data);
+        }
+    })
+})
+
+app.listen(process.env.ROOT, () => {
+    console.log('Server on port: http://localhost:', process.env.ROOT);
 })

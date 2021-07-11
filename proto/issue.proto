@@ -1,7 +1,19 @@
 syntax = "proto3";
 
 service IssueService {
-    rpc GetIssue(Empty) returns (Empty) {}
+    rpc GetIssue(Empty) returns (Issue) {}
+    rpc CreateIssue(Issue) returns (Issue) {}
 }
 
 message Empty {}
+
+
+message Issue {
+    string url = 1;
+    string title = 2;
+    string state = 3;
+}
+
+message IssuesResponse {
+    repeated Issue issues = 1;
+}
