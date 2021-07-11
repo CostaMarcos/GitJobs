@@ -17,15 +17,19 @@ const issueProto = grpc.loadPackageDefinition(packageDefinition);
 
 const server = new grpc.Server();
 
-async function searchAllIssues(_, callback){
+async function searchAllIssues(filter, callback){
     var list = await Issue.find({});
-    callback(null, list[0]);
+    callback(null, { issues: list });
 }
 
 async function createIssue(issue, callback){
-
-    await Issue.create(issue.request);
-    callback(null, issue.request);   
+    const list = await Issue.find({})
+    if(list.find((_issue) => _issue.url == issue.request.url)){
+        callback(null, null);
+    }else {
+        await Issue.create(issue.request);
+        callback(null, issue.request);   
+    }
 }
 
 

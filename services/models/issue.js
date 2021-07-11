@@ -13,6 +13,24 @@ const IssueSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    labels: [{
+        name: {
+            type: String,
+            required: true
+        },
+        description: {
+            type: String,
+            required: false
+        }
+    }],
+    created_at: {
+        type: String,
+        required: false
+    },
+    body: {
+        type: String,
+        required: false
+    }
 });
 
 const Issue = mongoose.model('Issue', IssueSchema);
