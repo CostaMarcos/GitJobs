@@ -1,8 +1,16 @@
 const mongoose = require('../database/index');
 
 const IssueSchema = new mongoose.Schema({
+    user:{
+        type: String,
+        required: true
+    },
     url: {
         type: String,
+        required: true
+    },
+    issue_id: {
+        type: Number,
         required: true
     },
     title: {
@@ -25,12 +33,8 @@ const IssueSchema = new mongoose.Schema({
     }],
     created_at: {
         type: String,
-        required: false
+        required: true
     },
-    body: {
-        type: String,
-        required: false
-    }
 });
 
 const Issue = mongoose.model('Issue', IssueSchema);
