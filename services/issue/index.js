@@ -2,7 +2,6 @@ const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader'); 
 const dotenv = require('dotenv');
 const axios = require('axios');
-const Issue = require('../models/issue');
 
 dotenv.config();
 
@@ -18,24 +17,39 @@ const issueProto = grpc.loadPackageDefinition(packageDefinition);
 const server = new grpc.Server();
 
 async function searchAllIssues(filter, callback){
-    var list = await Issue.find({});
-    callback(null, { issues: list });
-}
+    try{
+        const response = (await axios.get('https://api.github.com/repos/frontendbr/vagas/issues')).data;
 
-async function createIssue(issue, callback){
-    const list = await Issue.find({})
-    if(list.find((_issue) => _issue.url == issue.request.url)){
-        callback(null, null);
-    }else {
-        await Issue.create(issue.request);
-        callback(null, issue.request);   
+        var list = [];
+
+        for(let issue of response){
+            
+            obj = {
+                user: issue.user.login, 
+                url: issue.url,
+                issue_id: issue.number,
+                title: issue.title,
+                state: issue.state,
+                labels: issue.labels,
+                created_at: issue.created_at
+            }
+    
+            list.push(obj);
+        }
+        
+        callback(null, { issues: list });
+    }catch(err){
+        console.log(err);
+        callback(null, { issues: [] })
     }
-}
 
+
+
+
+}
 
 server.addService(issueProto.IssueService.service, {
-    GetIssue: searchAllIssues,
-    CreateIssue: createIssue
+    GetIssue: searchAllIssues
 });
 
 server.bindAsync(`0.0.0.0:${process.env.ISSUE_PORT}`, grpc.ServerCredentials.createInsecure(), () => {

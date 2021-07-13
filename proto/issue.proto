@@ -2,7 +2,6 @@ syntax = "proto3";
 
 service IssueService {
     rpc GetIssue(Filter) returns (IssuesResponse) {}
-    rpc CreateIssue(Issue) returns (Issue) {}
 }
 
 message Empty {}
@@ -13,7 +12,6 @@ message Filter {
 
 message Label {
     string name = 1;
-    string description = 2;
 }
 
 message Issue {
