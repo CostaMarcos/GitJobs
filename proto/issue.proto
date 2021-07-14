@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 service IssueService {
-    rpc GetIssue(Filter) returns (IssuesResponse) {}
+    rpc GetIssue(Empty) returns (IssuesResponse) {}
 }
 
 message Empty {}

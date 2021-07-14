@@ -16,6 +16,6 @@ const packageDefinition = protoLoader.loadSync(
 );
 
 const AtualizacaoService = grpc.loadPackageDefinition(packageDefinition).AtualizacaoService;
-const client = new AtualizacaoService(`0.0.0.0:4000`, grpc.credentials.createInsecure());
+const client = new AtualizacaoService(`0.0.0.0:4001`, grpc.credentials.createInsecure());
 
 module.exports = client;
