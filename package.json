@@ -4,9 +4,10 @@
   "description": "",
   "main": "",
   "scripts": {
-    "start": "run-p start-controller start-issue",
+    "start": "run-p start-controller start-issue start-atualizacao",
     "start-controller": "nodemon services/controller/index.js",
-    "start-issue": "nodemon services/issue/index.js"
+    "start-issue": "nodemon services/issue/index.js",
+    "start-atualizacao": "nodemon services/Atualizacao/index.js"
   },
   "repository": {
     "type": "git",
