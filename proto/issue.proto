@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+service IssueService {
+    rpc GetIssue(Filter) returns (IssuesResponse) {}
+}
+
+message Empty {}
+
+message Filter {
+    string filter = 1;
+}
+
+message Label {
+    string name = 1;
+}
+
+message Issue {
+    string user = 1;
+    string url = 2;
+    int32 issue_id = 3;
+    string title = 4;
+    string state = 5;
+    repeated Label labels = 6;
+    string created_at = 7;
+}
+
+message IssuesResponse {
+    repeated Issue issues = 1;
+}

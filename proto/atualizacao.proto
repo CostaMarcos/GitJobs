@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+service AtualizacaoService {
+    rpc GetAtualiza(Empty) returns (AtualizaResponse) {}
+}
+
+message Empty {}
+
+
+message AtualizaResponse {
+    int32 vagas = 1;
+}
