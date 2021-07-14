@@ -12,7 +12,6 @@ dotenv.config();
 app.use(cors(), bodyParser.json());
 
 app.get('/', (req, res, next) => {
-    
     issue.GetIssue(req.query, (err, data) => {
         if(err){
             res.status(500).send({ error: 'Internal error' });
