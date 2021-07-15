@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+service PersistenciaService {
+    rpc CadastrarEmail(Data) returns (Empty) {}
+    rpc ListarEmail(Empty) returns (ListResponse) {}
+}
+
+message Empty {}
+
+message Data {
+    string nome=1;
+    string email=2;
+}
+
+message ListResponse {
+    repeated Data data=1;
+}
