@@ -14,10 +14,7 @@ const packageDefinition = protoLoader.loadSync('proto/atualizacao.proto', {
 const atualizacaoProto = grpc.loadPackageDefinition(packageDefinition);
 
 const server = new grpc.Server();
-
-
-
-    async function NovasVagas(_,callback){
+    async function getAtualiza(_,callback){
         console.log('aaaaaaaaaaaaaaaaaaaa')
         await Issue.GetIssue(null, (err, data) => {
             if(err){
@@ -31,7 +28,7 @@ const server = new grpc.Server();
                 var QuantiNovVag = 0;
                 var datas = DatasHoje();
                 for (var i = 0; i<30;i++){
-                    if ( response.workflow_runs[i].created_at >= datas[1] && response.workflow_runs[i].created_at <= datas[0] ) {
+                    if ( response.issues[i].created_at >= datas[1] && response.issues[i].created_at <= datas[0] ) {
                         QuantiNovVag += 1;
 
             }
@@ -53,10 +50,9 @@ function DatasHoje(){
 }
 
 server.addService(atualizacaoProto.AtualizacaoService.service, {
-    GetAtualiza:NovasVagas,
-    
+    GetAtualiza:getAtualiza
 });
 
-server.bindAsync(`0.0.0.0:4001`, grpc.ServerCredentials.createInsecure(), () => {
+server.bindAsync(`0.0.0.0:4002`, grpc.ServerCredentials.createInsecure(), () => {
     server.start();
 });
