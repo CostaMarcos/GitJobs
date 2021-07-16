@@ -14,30 +14,29 @@ const packageDefinition = protoLoader.loadSync('proto/atualizacao.proto', {
 const atualizacaoProto = grpc.loadPackageDefinition(packageDefinition);
 
 const server = new grpc.Server();
-    async function getAtualiza(_,callback){
-        console.log('aaaaaaaaaaaaaaaaaaaa')
-        await Issue.GetIssue(null, (err, data) => {
-            if(err){
-                console.log(err)
-               return [];
-            }
-            else {
-                
-                const response = data
-                console.log('kkkkkkkkkkkkkkkkkkkkkkkkkkk')
-                var QuantiNovVag = 0;
-                var datas = DatasHoje();
-                for (var i = 0; i<30;i++){
-                    if ( response.issues[i].created_at >= datas[1] && response.issues[i].created_at <= datas[0] ) {
-                        QuantiNovVag += 1;
 
-            }
+
+async function getAtualiza(_,callback){
+    await Issue.GetIssue(null, (err, data) => {
+        if(err){
+            console.log(err)
+           return [];
         }
-        callback(null,  {vagas:QuantiNovVag})
+        else {
+            const response = data
+            var QuantiNovVag = 0;
+            var datas = DatasHoje();
+            for (var i = 0; i<30;i++){
+                if ( response.issues[i].created_at >= datas[1] && response.issues[i].created_at <= datas[0] ) {
+                    QuantiNovVag += 1;
+
+        }
     }
-                
-        });
-    }
+    callback(null,  {vagas:QuantiNovVag})
+}
+
+    });
+}
 
 
 function DatasHoje(){
@@ -50,7 +49,8 @@ function DatasHoje(){
 }
 
 server.addService(atualizacaoProto.AtualizacaoService.service, {
-    GetAtualiza:getAtualiza
+    GetAtualiza:getAtualiza,
+    
 });
 
 server.bindAsync(`0.0.0.0:4002`, grpc.ServerCredentials.createInsecure(), () => {

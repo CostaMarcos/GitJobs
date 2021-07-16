@@ -4,10 +4,11 @@
   "description": "",
   "main": "",
   "scripts": {
-    "start": "run-p start-controller start-issue start-atualizacao",
+    "start": "run-p start-controller start-issue start-atualizacao start-persistencia",
     "start-controller": "nodemon services/controller/index.js",
     "start-issue": "nodemon services/issue/index.js",
-    "start-atualizacao": "nodemon services/Atualizacao/index.js"
+    "start-atualizacao": "nodemon services/Atualizacao/index.js",
+    "start-persistencia": "nodemon services/Persistencia/index.js"
   },
   "repository": {
     "type": "git",

@@ -12,6 +12,7 @@ dotenv.config();
 app.use(cors(), bodyParser.json());
 
 app.get('/', (req, res, next) => {
+    
     issue.GetIssue(null, (err, data) => {
         if(err){
             res.status(500).send({ error: 'Internal error' });
@@ -21,16 +22,16 @@ app.get('/', (req, res, next) => {
         }
     });
 });
-
-app.get('/atualizacao', (req,res)=> {
+// teste de serviço de atualizaçao
+// app.get('/atualizacao', (req,res)=> {
     
-    atualizacao.GetAtualiza(null, (err,data)=>{
-        if (err){
-            console.log(err)
-        }
-        res.json(data)
-    })
-}) 
+//     atualizacao.GetAtualiza(null, (err,data)=>{
+//         if (err){
+//             console.log(err)
+//         }
+//         res.json(data)
+//     })
+// }) 
 app.listen(process.env.ROOT, () => {
     console.log('Server on port: http://localhost:', process.env.ROOT);
 })
