@@ -26,7 +26,7 @@ async function searchAllIssues(filter, callback){
             
             obj = {
                 user: issue.user.login, 
-                url: issue.url,
+                url: issue.html_url,
                 issue_id: issue.number,
                 title: issue.title,
                 state: issue.state,
