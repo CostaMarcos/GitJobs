@@ -4,8 +4,8 @@ const cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
-const atualizacao = require('./atualizacao')
-
+const atualizacao = require('./atualizacao');
+const persistencia = require('./persistencia');
 
 dotenv.config();
 
@@ -22,16 +22,13 @@ app.get('/', (req, res, next) => {
         }
     });
 });
-// teste de serviço de atualizaçao
-// app.get('/atualizacao', (req,res)=> {
-    
-//     atualizacao.GetAtualiza(null, (err,data)=>{
-//         if (err){
-//             console.log(err)
-//         }
-//         res.json(data)
-//     })
-// }) 
+
+app.post('/email', async (req, res) => {
+    await persistencia.CadastrarEmail(req.body, (err, data) =>{
+        res.status(200);
+    })
+})
+
 app.listen(process.env.ROOT, () => {
     console.log('Server on port: http://localhost:', process.env.ROOT);
 })
