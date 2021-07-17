@@ -18,16 +18,22 @@ function lerArquivo(_, callback) {
     callback(null, {data:content}) 
 }
 
-function gravarArquivoJSON (body, callback) {
+async function gravarArquivoJSON (body, callback) {
+    try{
+        const { email } = body.request
     
-    const { email } = body
-    
-    const listaPessoas = lerArquivo()
-    listaPessoas.push({ email })
-    
-    const arquivoAtualizado = JSON.stringify(listaPessoas)
-    fs.writeFileSync('./data/items.json', arquivoAtualizado, 'utf-8')
-    callback(null,null) 
+        const listaPessoas = fs.readFileSync('./data/items.json', 'utf-8')
+        console.log(listaPessoas);
+        
+        listaPessoas.push({ email })
+        
+        const arquivoAtualizado = JSON.stringify(listaPessoas)
+        fs.writeFileSync('./data/items.json', arquivoAtualizado)
+        callback(null, {}) 
+    }catch(err){
+        console.log(err);
+    }
+
 }
 
 server.addService(persistencia.PersistenciaService.service, {

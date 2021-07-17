@@ -8,10 +8,9 @@ service PersistenciaService {
 message Empty {}
 
 message Data {
-    string nome=1;
-    string email=2;
+    string email = 1;
 }
 
 message ListResponse {
-    repeated Data data=1;
+    repeated Data data = 1;
 }

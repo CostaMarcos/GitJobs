@@ -8,7 +8,8 @@
     "start-controller": "nodemon services/controller/index.js",
     "start-issue": "nodemon services/issue/index.js",
     "start-atualizacao": "nodemon services/Atualizacao/index.js",
-    "start-persistencia": "nodemon services/Persistencia/index.js"
+    "start-persistencia": "nodemon services/Persistencia/index.js",
+    "start-mailer": "nodemon services/Email/index.js"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,8 @@
     "express": "^4.17.1",
     "google-protobuf": "^3.15.0-rc.1",
     "grpc": "^1.24.4",
-    "mongoose": "^5.13.2"
+    "mongoose": "^5.13.2",
+    "nodemailer": "^6.6.3"
   },
   "devDependencies": {
     "serve": "^12.0.0",

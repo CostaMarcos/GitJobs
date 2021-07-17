@@ -18,23 +18,16 @@ const server = new grpc.Server();
 
 async function getAtualiza(_,callback){
     await Issue.GetIssue(null, (err, data) => {
-        if(err){
-            console.log(err)
-           return [];
-        }
-        else {
-            const response = data
-            var QuantiNovVag = 0;
-            var datas = DatasHoje();
-            for (var i = 0; i<30;i++){
-                if ( response.issues[i].created_at >= datas[1] && response.issues[i].created_at <= datas[0] ) {
-                    QuantiNovVag += 1;
+        const response = data
+        var QuantiNovVag = 0;
+        var datas = DatasHoje();
+        for (var i = 0; i<30;i++){
+            if ( response.issues[i].created_at >= datas[1] && response.issues[i].created_at <= datas[0] ) {
+                QuantiNovVag += 1;
 
+            }
         }
-    }
-    callback(null,  {vagas:QuantiNovVag})
-}
-
+        callback(null,  {vagas:QuantiNovVag})
     });
 }
 
