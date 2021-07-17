@@ -25,7 +25,12 @@ app.get('/', (req, res, next) => {
 
 app.post('/email', async (req, res) => {
     await persistencia.CadastrarEmail(req.body, (err, data) =>{
-        res.status(200);
+        if(err){
+            res.status(500).send({ error: 'Internal error' });
+        }
+        else {
+            res.status(200);            
+        }
     })
 })
 
