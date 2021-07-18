@@ -78,7 +78,8 @@ Descrição do Módulo
 Descrição do Módulo
 
 ## :twisted_rightwards_arrows: DIAGRAMA DO SISTEMA
-  <img title='Imagem de Exemplo' alt='Example Image' width='100%' src='https://blog.betrybe.com/wp-content/uploads/2020/04/git-1920x818.jpg'>
+  <img title='Diagrama de Tecnologias Usadas' alt='Diagram' width='100%' src='https://raw.githubusercontent.com/CostaMarcos/GitJobs/develop/images/Diagrama%20e%20Tecnologias.svg'>
+  <img title='Diagrama de Autores de Módulos e Suas Ligações' alt='Diagram' width='100%' src='https://raw.githubusercontent.com/CostaMarcos/GitJobs/develop/images/Diagrama%20e%20Autores.svg'>
 
 ## :art: LAYOUT E DESIGN
   <img title='Imagem de Exemplo' alt='Example Image' width='100%' src='https://blog.betrybe.com/wp-content/uploads/2020/04/git-1920x818.jpg'>
