@@ -2,7 +2,7 @@ const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next')
 
-const dev = process.env.NODE_ENV !== 'production'
+const dev = true //process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
@@ -21,6 +21,7 @@ app.prepare().then(() => {
             handle(req, res, parsedUrl)
         }
     }).listen(2000, (err) => {
+        console.log('Frontend on port 2000')
         if (err) throw err
     })
 })
