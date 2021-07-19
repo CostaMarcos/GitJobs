@@ -78,7 +78,7 @@ O serviço de atualização funciona a partir de uma função principal e uma au
 O serviço de envio de emails tem o papel de notificar os usuários sobre as novas vagas, para isso é necessário dois dados fundamentais, o primeiro é a lista de emails dos usuários que se inscreveram e o segundo dado é a quantidade de novas vagas disponíveis. Então este serviço cria uma comunicação com os serviços de Atualização e Persistência. Do serviço de Atualização é utilizado a função GetAtualiza, que retorna a quantidade de novas vagas do dia. Do serviço de Persistência é utilizado a função ListarEmail que retorna basicamente um array de emails cadastrados. A função de envio de email utiliza a biblioteca nodemailer, e faz o primeiro envio assim que o servidor é iniciado e repete a ação a cada 12h com os novos emails e nova quantidade de vagas, para editar o intervalo entre os envios, basta modificar a variável TIME_NOTIFICATION (em milisegundos) no arquivo .env que está na raiz do projeto.
 
 ### Serviço de Persistência - Mayara Silva
-Descrição do Módulo
+O serviço de persistência possui duas funções. A função “gravarArquivoJSON” possui a funcionalidade de registrar e-mails em uma lista no formato de JSON  na pasta “data” que pode ser utilizado no modulo de e-mail, e a função “lerArquivo” que faz a leitura da lista de e-mails gravadas no arquivo JSON
 
 ## :twisted_rightwards_arrows: DIAGRAMA DO SISTEMA
   <img title='Diagrama de Tecnologias Usadas' alt='Diagram' width='100%' src='https://raw.githubusercontent.com/CostaMarcos/GitJobs/develop/images/Diagrama%20e%20Tecnologias.svg'>
