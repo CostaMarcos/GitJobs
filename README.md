@@ -95,9 +95,10 @@ Descrição do Módulo
 
 ### :package: Executando como Container Docker
 #### :grey_exclamation: Pré-Requisitos
-  Aqui será colocado todos os pré requisitos. Poderá ser colocado em forma de lista ou texto corrido. E todos os códigos devem usar `apóstrofes`
+  - docker 
+  - docker-compose
 #### :play_or_pause_button: Executando o Projeto
-  Aqui será colocado como o projeto pode ser executado.
+  `docker-compose up`
 
 ## :hammer_and_wrench: DESENVOLVIDO COM
   - [Node](https://nodejs.org/) - Software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web. - Justificativa para uso dessa tecnologia é que ela é a plataforma padrão para interpretação e execução do projeto, pois sem ela, nenhuma aplicação poderia ser executada.
