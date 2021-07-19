@@ -61,7 +61,7 @@
 ## :brain: PRINCÍPIOS E PADRÕES DE PROJETO UTILIZADOS
   - [x] Descrição do Item
   - [x] Descrição do Item
-  - Serviço de Atualização = No modulo de atualização utiliza a criação de classes ou objetos, apenas funções, não foi utilizado nenhum padrão de projeto pois não se observou a necessidade ou mesmo utilidade eficiente para o código. O princípio de responsabilidade única onde o serviço faz apenas o que corresponde a sua responsabilidade foi utilizado no modulo. Respeitando o contexto do modulo e tornando o modulo coeso.
+  - Serviço de Atualização = No modulo de atualização utiliza-se a criação de classes ou objetos, apenas funções, não foi utilizado nenhum padrão de projeto pois não se observou a necessidade ou mesmo utilidade eficiente para o código. O princípio de responsabilidade única onde o serviço faz apenas o que corresponde a sua responsabilidade foi utilizado no modulo. Respeitando o contexto do modulo e tornando o modulo coeso.
   - [x] Descrição do Item
   - [x] Descrição do Item
 
