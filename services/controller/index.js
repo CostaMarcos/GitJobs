@@ -30,5 +30,5 @@ app.post('/email', async (req, res) => {
 })
 
 app.listen(process.env.ROOT, () => {
-    console.log('Server on port: http://localhost:', process.env.ROOT);
+    console.log('Backend on port: http://localhost:', process.env.ROOT);
 })
