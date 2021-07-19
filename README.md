@@ -82,7 +82,8 @@ Descrição do Módulo
   <img title='Diagrama de Autores de Módulos e Suas Ligações' alt='Diagram' width='100%' src='https://raw.githubusercontent.com/CostaMarcos/GitJobs/develop/images/Diagrama%20e%20Autores.svg'>
 
 ## :art: LAYOUT E DESIGN
-  <img title='Imagem de Exemplo' alt='Example Image' width='100%' src='https://blog.betrybe.com/wp-content/uploads/2020/04/git-1920x818.jpg'>
+  <img title='Interface Principal da Aplicação Web' alt='Main Interface' width='100%' src='https://raw.githubusercontent.com/CostaMarcos/GitJobs/develop/images/Web%20Main%20Interface.jpeg'>
+  <img title='Interface Modal da Aplicação Web' alt='Modal Interface' width='100%' src='https://raw.githubusercontent.com/CostaMarcos/GitJobs/develop/images/Web%20Modal%20Interface.jpeg'>
 
 ## :triangular_flag_on_post: PRIMEIROS PASSOS
 
