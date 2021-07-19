@@ -61,7 +61,7 @@
 ## :brain: PRINCÍPIOS E PADRÕES DE PROJETO UTILIZADOS
   - [x] Descrição do Item
   - [x] Descrição do Item
-  - [x] Descrição do Item
+  - Serviço de Atualização = No modulo de atualização que não utiliza de classes no código, não foi utilizado nenhum padrão de projeto pois não se observou nenhuma necessidade ou mesmo utilidade eficiente para o código. Os princípio de responsabilidade única onde o serviço faz apenas o que corresponde a sua responsabilidade utilizado no modulo.
   - [x] Descrição do Item
   - [x] Descrição do Item
 
@@ -71,7 +71,7 @@ Descrição do Módulo
   - Serviço de BackEnd = Marcos Vinícius
 Descrição do Módulo
   - Serviço de Atualização = Carlos Gabriel
-Descrição do Módulo
+Descrição do Módulo: O serviço de atualização funciona a partir de uma função principal e uma auxiliar. A função principal “getAtualiza”, faz uma requisição a API do GitHub através do backend para obter dados das vagas registradas, essa requisição retornara um arquivo JSON contendo dados das últimas “issues” registradas no repositório. Então é solicitado a função auxiliar “DatasHoje” que retorna a data atual e a data do dia anterior no fuso horário de referência “UTC” gerando um intervalo de vinte e quatro horas que será usado pra analisar as novas vagas nesse período de tempo. Então um laço “for” com um “if” dentro da função principal irá comparar as datas de cada vaga registrada com as do arquivo JSON e se caso tiver sido registrada no intervalo de 24 horas irá adicionar um valor a uma variável de inteiros “QuantiNovVag”, quando terminar a função principal retornara essa variável de inteiros com a quantidade de novas vagas.
   - Serviço de Email = Mayara Silva
 Descrição do Módulo
   - Serviço de Persistência = Mayara Silva

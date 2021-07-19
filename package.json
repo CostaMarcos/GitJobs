@@ -2,8 +2,8 @@
 	"name": "gitjobs",
 	"version": "1.0.0",
 	"scripts": {
-		"start": "run-p start-controller start-issue start-atualizacao start-persistencia start-mailer",
-		"start-frontend": "SET NODE_ENV=production && cd services/frontend/ && node server.js",
+		"start": "run-p start-controller start-issue start-atualizacao start-persistencia start-mailer start-frontend",
+		"start-frontend": "cd ./services/frontend && node server.js",
 		"start-controller": "node services/controller/index.js",
 		"start-issue": "node services/issue/index.js",
 		"start-atualizacao": "node services/Atualizacao/index.js",

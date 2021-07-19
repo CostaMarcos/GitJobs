@@ -1,11 +1,12 @@
 version: "3.8"
 
 services:
-    backend: 
+    application: 
         build: .
         command: ["npm", "start"]
         ports: 
             - "3000:3000"
+            - "2000:2000"
         restart: always
         volumes:
             - .:/usr/app
