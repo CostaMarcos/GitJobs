@@ -56,7 +56,7 @@
   - [:bulb: INSPIRAÇÕES](#bulb-inspirações)
 
 ## :thought_balloon: SOBRE O PROJETO
-  Este é apenas um arquivo de exemplo para ser usados em projetos do GitHub
+  Este projeto foi feito como trabalho final da disciplina de Arquitetura de Software, lecionada pelo professor Carlos Mar, no Instituto Federal do Amazonas <i>Campus</i> Manaus Zona Leste (IFAM CMZL). Foi desenvolvido pelos alunos Carlos Gabriel, Lucas Castro, Marcos Vinícius e Mayara Silva, e foi desenvolvido usando a Arquitetura de Microsserviços.
 
 ## :brain: PRINCÍPIOS E PADRÕES DE PROJETO UTILIZADOS
   - [x] Descrição do Item
@@ -88,15 +88,15 @@ Descrição do Módulo
 ## :triangular_flag_on_post: PRIMEIROS PASSOS
 
 ### :package: Executando como Projeto Node
-#### :grey_exclamation: Pré-Requisitos
-  Aqui será colocado todos os pré requisitos. Poderá ser colocado em forma de lista ou texto corrido. E todos os códigos devem usar `apóstrofes`
-#### :play_or_pause_button: Executando o Projeto
-  Aqui será colocado como o projeto pode ser executado.
+#### :grey_exclamation: Pré-Requisitos com Node
+  Além de ter o Node e o NPM já configurados na máquina ([Acesse a documentação para instalação e configuração do NodeJS aqui](https://nodejs.org/pt-br/download/)), para a execução do projeto, você só precisa instalar as dependências do projeto usando o comando `npm install` na pasta raiz do diretório do projeto.
+#### :play_or_pause_button: Executando o Projeto com Node
+  Após a instalação de todas as dependências de requisito usando o comando mostrado acima, execute o comando `npm start`, ou `npm run start`, para iniciar todos os serviços da aplicação. Após, é só acessar a interface web abrindo a URL http://localhost:2000/ no navegador, ou usar a API na URL http://localhost:3000/.
 
 ### :package: Executando como Container Docker
-#### :grey_exclamation: Pré-Requisitos
+#### :grey_exclamation: Pré-Requisitos com Docker
   Aqui será colocado todos os pré requisitos. Poderá ser colocado em forma de lista ou texto corrido. E todos os códigos devem usar `apóstrofes`
-#### :play_or_pause_button: Executando o Projeto
+#### :play_or_pause_button: Executando o Projeto com Docker
   Aqui será colocado como o projeto pode ser executado.
 
 ## :hammer_and_wrench: DESENVOLVIDO COM
