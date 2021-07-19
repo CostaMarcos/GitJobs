@@ -44,11 +44,11 @@
   - [:art: LAYOUT E DESIGN](#art-layout-e-design)
   - [:triangular_flag_on_post: PRIMEIROS PASSOS](#triangular_flag_on_post-primeiros-passos)
     - [:package: Executando como Projeto Node](#package-executando-como-projeto-node)
-        - [:grey_exclamation: Pré-Requisitos](#grey_exclamation-pré-requisitos)
-        - [:play_or_pause_button: Executando o Projeto](#play_or_pause_button-executando-o-projeto)
+        - [:grey_exclamation: Pré-Requisitos com Node](#grey_exclamation-pré-requisitos-com-node)
+        - [:play_or_pause_button: Executando o Projeto com Node](#play_or_pause_button-executando-o-projeto-com-node)
     - [:package: Executando como Container Docker](#package-executando-como-container-docker)
-        - [:grey_exclamation: Pré-Requisitos](#grey_exclamation-pré-requisitos)
-        - [:play_or_pause_button: Executando o Projeto](#play_or_pause_button-executando-o-projeto)
+        - [:grey_exclamation: Pré-Requisitos com Docker](#grey_exclamation-pré-requisitos-com-docker)
+        - [:play_or_pause_button: Executando o Projeto com Docker](#play_or_pause_button-executando-o-projeto-com-docker)
   - [:hammer_and_wrench: DESENVOLVIDO COM](#hammer_and_wrench-desenvolvido-com)
   - [:cloud: SERVIÇOS USADOS](#cloud-serviços-usados)
   - [:nerd_face: AUTORES](#nerd_face-autores)
@@ -61,14 +61,14 @@
 ## :brain: PRINCÍPIOS E PADRÕES DE PROJETO UTILIZADOS
   - [x] Descrição do Item
   - [x] Descrição do Item
-  - Serviço de Atualização = No modulo de atualização que não é utilizado a criação de classes ou objetos, apenas funções, não foi utilizado nenhum padrão de projeto pois não se observou a necessidade ou mesmo utilidade eficiente para o código. O princípio de responsabilidade única onde o serviço faz apenas o que corresponde a sua responsabilidade foi utilizado no modulo. Respeitando o contexto do modulo e tornando o modulo coeso.
+  - Serviço de Atualização = No modulo de atualização utiliza a criação de classes ou objetos, apenas funções, não foi utilizado nenhum padrão de projeto pois não se observou a necessidade ou mesmo utilidade eficiente para o código. O princípio de responsabilidade única onde o serviço faz apenas o que corresponde a sua responsabilidade foi utilizado no modulo. Respeitando o contexto do modulo e tornando o modulo coeso.
   - [x] Descrição do Item
   - [x] Descrição do Item
 
 ## :star2: FUNCIONALIDADES
   - Serviço de FrontEnd = Lucas Castro
 Descrição do Módulo
-  - Serviço de BackEnd = Marcos Vinícius
+  - Serviço de Issues = Esse serviço realiza a busca e tratamento das vagas de emprego que são disponibilizadas em formato de Issues no github, a função que realiza essa atividade foi denominada GetIssue e somente é responsável por fazer a requisição e retorno dos dados, para os demais serviços e também o frontend, essa função foi desenvolvida utilizado a biblioteca Axios para realizar requisições a Api do Github, juntamente com a biblioteca GRPC por ser uma ferramenta de transmissão de dados de forma rápida com baixa latência. 
 Descrição do Módulo
   - Serviço de Atualização = Carlos Gabriel
 Descrição do Módulo: O serviço de atualização funciona a partir de uma função principal e uma auxiliar. A função principal “getAtualiza”, faz uma requisição a API do GitHub através do backend para obter dados das vagas registradas, essa requisição retornara um arquivo JSON contendo dados das últimas “issues” registradas no repositório. Então é solicitado a função auxiliar “DatasHoje” que retorna a data atual e a data do dia anterior no fuso horário de referência “UTC” gerando um intervalo de vinte e quatro horas que será usado pra analisar as novas vagas nesse período de tempo. Então um laço “for” com um “if” dentro da função principal irá comparar as datas de cada vaga registrada com as do arquivo JSON e se caso tiver sido registrada no intervalo de 24 horas irá adicionar um valor a uma variável de inteiros “QuantiNovVag”, quando terminar a função principal retornara essa variável de inteiros com a quantidade de novas vagas.
@@ -95,9 +95,9 @@ Descrição do Módulo
 
 ### :package: Executando como Container Docker
 #### :grey_exclamation: Pré-Requisitos com Docker
-  Aqui será colocado todos os pré requisitos. Poderá ser colocado em forma de lista ou texto corrido. E todos os códigos devem usar `apóstrofes`
+  Primeiro, é necessário a instalação e configuração do Docker, que pode ser vista [aqui](https://docs.docker.com/get-docker/). Depois a instalação do Docker Compose, que pode ser vista [aqui](https://docs.docker.com/compose/install/)
 #### :play_or_pause_button: Executando o Projeto com Docker
-  Aqui será colocado como o projeto pode ser executado.
+  Depois de tudo configurado usando as instruções acima, é necessário somente executar o comando `docker-compose up` na pasta raiz do projeto, para a execução do container.
 
 ## :hammer_and_wrench: DESENVOLVIDO COM
   - [Node](https://nodejs.org/) - Software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web. - Justificativa para uso dessa tecnologia é que ela é a plataforma padrão para interpretação e execução do projeto, pois sem ela, nenhuma aplicação poderia ser executada.
