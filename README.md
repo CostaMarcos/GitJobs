@@ -99,16 +99,25 @@ Descrição do Módulo
   Aqui será colocado como o projeto pode ser executado.
 
 ## :hammer_and_wrench: DESENVOLVIDO COM
-  - [Node](https://nodejs.org/) - Software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web. - Justificativa de Uso.
-  - [TypeScript](https://www.typescriptlang.org/) - Superconjunto de JavaScript desenvolvido pela Microsoft que adiciona tipagem e alguns outros recursos a linguagem. - Justificativa de Uso.
-  - [Next](https://nextjs.org/) - Estrutura da web de desenvolvimento front-end React de código aberto criada por Vercel que permite funcionalidades como renderização do lado do servidor e geração de sites estáticos para aplicativos da web baseados em React. - Justificativa de Uso.
-  - [React](https://reactjs.org/) - Biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web. - Justificativa de Uso.
-  - [Styled Components](https://styled-components.com/) - Biblioteca para React e React Native que permite que você use estilos ao nível de componente na sua aplicação. Eles são escritos em uma mistura de JavaScript com CSS. - Justificativa de Uso.
-  - [Material UI](https://material-ui.com/pt/) - Framework de componentes React que implementam o Google Material Design. - Justificativa de Uso.
-  - [Axios](https://github.com/axios/axios) - Cliente HTTP baseado em Promises para fazer requisições. Pode ser utilizado tanto no navegador quando no Node. js. - Justificativa de Uso.
-  - [gRPC](https://grpc.io/) - Estrutura de Chamada de Procedimento Remoto de linguagem independente de alto desempenho. - Justificativa de Uso.
-  - [Express](https://expressjs.com/pt-br/) - Framework para Node.js que fornece recursos mínimos para construção de servidores web. - Justificativa de Uso.
-  - [Docker](https://www.docker.com/) - Conjunto de produtos de plataforma como serviço que usam virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres. Os contêineres são isolados uns dos outros e agrupam seus próprios softwares, bibliotecas e arquivos de configuração. - Justificativa de Uso.
+  - [Node](https://nodejs.org/) - Software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web. - Justificativa para uso dessa tecnologia é que ela é a plataforma padrão para interpretação e execução do projeto, pois sem ela, nenhuma aplicação poderia ser executada.
+
+  - [TypeScript](https://www.typescriptlang.org/) - Superconjunto de JavaScript desenvolvido pela Microsoft que adiciona tipagem e alguns outros recursos a linguagem. - Justificativa para uso dessa tecnologia é que ela facilita algumas questões de tipos de arquivos e prevenção de erros. Essa tecnologia foi usada somente no FrontEnd, não sendo empregada no Backend, por motivos de compatibilidade.
+
+  - [Next](https://nextjs.org/) - Estrutura da web de desenvolvimento front-end React de código aberto criada por Vercel que permite funcionalidades como renderização do lado do servidor e geração de sites estáticos para aplicativos da web baseados em React. - Justificativa para uso dessa tecnologia é que ela facilita algumas questões de desenvolvimendo de aplicações, como criações de rotas e distribuição de recursos entre componentes.
+
+  - [React](https://reactjs.org/) - Biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web. - Justificativa para uso dessa tecnologia é que, além de ser a tecnologia de interface padrão no uso do NextJS, é uma das bibliotecas mais usadas no momento para criação de interfaces.
+
+  - [Styled Components](https://styled-components.com/) - Biblioteca para React e React Native que permite que você use estilos ao nível de componente na sua aplicação. Eles são escritos em uma mistura de JavaScript com CSS. - Justificativa para uso dessa tecnologia é que ela é de fácil aprendizado e ajuda muito na estilização de componentes, criando escopos para o mesmo e ajudando no encapsulamento de elementos do Modelo de Objetos do Documento (DOM).
+
+  - [Material UI](https://material-ui.com/pt/) - Framework de componentes React que implementam o Google Material Design. - Justificativa para uso dessa tecnologia é que ela ajuda na criação e uso de alguns componentes, criando uma padronização de design no projeto.
+
+  - [Axios](https://github.com/axios/axios) - Cliente HTTP baseado em Promises para fazer requisições. Pode ser utilizado tanto no navegador quando no Node. js. - Justificativa para uso dessa tecnologia é que ela é uma das bibliotecas mais utilizadas para realização de requisições simples e complexas a API's REST e páginas comuns da web.
+
+  - [gRPC](https://grpc.io/) - Estrutura de Chamada de Procedimento Remoto de linguagem independente de alto desempenho. - Justificativa para uso dessa tecnologia é que ela é a mais utilizada para comunicação entre microsserviços, além de seu fácil entendimento e baixa curva de aprendizado.
+
+  - [Express](https://expressjs.com/pt-br/) - Framework para Node.js que fornece recursos mínimos para construção de servidores web. - Justificativa para uso dessa tecnologia é que ele é o framework padrão para criação de API's REST e servidores web usando a plataforma NodeJS.
+
+  - [Docker](https://www.docker.com/) - Conjunto de produtos de plataforma como serviço que usam virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres. Os contêineres são isolados uns dos outros e agrupam seus próprios softwares, bibliotecas e arquivos de configuração. - Justificativa para uso dessa tecnologia é que ela permite que aplicações sejam encapsuladas dentro de pequenos containers linux, isolando a aplicação do resto do sistema operacional e permitindo a fácil execução da mesma em ambientes e sistemas diversos.
 
 ## :cloud: SERVIÇOS USADOS
   - [Google Fonts](https://fonts.google.com/) - Serviço online de disponibilização de famílias de fontes gratuitas do Google.
