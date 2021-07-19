@@ -68,7 +68,7 @@
 ## :star2: FUNCIONALIDADES
   - Serviço de FrontEnd = Lucas Castro
 Descrição do Módulo
-  - Serviço de BackEnd = Marcos Vinícius
+  - Serviço de Issues = Esse serviço realiza a busca e tratamento das vagas de emprego que são disponibilizadas em formato de Issues no github, a função que realiza essa atividade foi denominada GetIssue e somente é responsável por fazer a requisição e retorno dos dados, para os demais serviços e também o frontend, essa função foi desenvolvida utilizado a biblioteca Axios para realizar requisições a Api do Github, juntamente com a biblioteca GRPC por ser uma ferramenta de transmissão de dados de forma rápida com baixa latência. 
 Descrição do Módulo
   - Serviço de Atualização = Carlos Gabriel
 Descrição do Módulo: O serviço de atualização funciona a partir de uma função principal e uma auxiliar. A função principal “getAtualiza”, faz uma requisição a API do GitHub através do backend para obter dados das vagas registradas, essa requisição retornara um arquivo JSON contendo dados das últimas “issues” registradas no repositório. Então é solicitado a função auxiliar “DatasHoje” que retorna a data atual e a data do dia anterior no fuso horário de referência “UTC” gerando um intervalo de vinte e quatro horas que será usado pra analisar as novas vagas nesse período de tempo. Então um laço “for” com um “if” dentro da função principal irá comparar as datas de cada vaga registrada com as do arquivo JSON e se caso tiver sido registrada no intervalo de 24 horas irá adicionar um valor a uma variável de inteiros “QuantiNovVag”, quando terminar a função principal retornara essa variável de inteiros com a quantidade de novas vagas.
