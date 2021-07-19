@@ -74,8 +74,8 @@ Esse serviço realiza a busca e tratamento das vagas de emprego que são disponi
 ### Serviço de Atualização - Carlos Gabriel
 O serviço de atualização funciona a partir de uma função principal e uma auxiliar. A função principal “getAtualiza”, faz uma requisição a API do GitHub através do backend para obter dados das vagas registradas, essa requisição retornara um arquivo JSON contendo dados das últimas “issues” registradas no repositório. Então é solicitado a função auxiliar “DatasHoje” que retorna a data atual e a data do dia anterior no fuso horário de referência “UTC” gerando um intervalo de vinte e quatro horas que será usado pra analisar as novas vagas nesse período de tempo. Então um laço “for” com um “if” dentro da função principal irá comparar as datas de cada vaga registrada com as do arquivo JSON e se caso tiver sido registrada no intervalo de 24 horas irá adicionar um valor a uma variável de inteiros “QuantiNovVag”, quando terminar a função principal retornara essa variável de inteiros com a quantidade de novas vagas.
 
-### Serviço de Email - Mayara Silva
-Descrição do Módulo
+### Serviço de Email - Marcos Vinícius
+O serviço de envio de emails tem o papel de notificar os usuários sobre as novas vagas, para isso é necessário dois dados fundamentais, o primeiro é a lista de emails dos usuários que se inscreveram e o segundo dado é a quantidade de novas vagas disponíveis. Então este serviço cria uma comunicação com os serviços de Atualização e Persistência. Do serviço de Atualização é utilizado a função GetAtualiza, que retorna a quantidade de novas vagas do dia. Do serviço de Persistência é utilizado a função ListarEmail que retorna basicamente um array de emails cadastrados. A função de envio de email utiliza a biblioteca nodemailer, e faz o primeiro envio assim que o servidor é iniciado e repete a ação a cada 12h com os novos emails e nova quantidade de vagas, para editar o intervalo entre os envios, basta modificar a variável TIME_NOTIFICATION (em milisegundos) no arquivo .env que está na raiz do projeto.
 
 ### Serviço de Persistência - Mayara Silva
 Descrição do Módulo
