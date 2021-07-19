@@ -59,22 +59,25 @@
   Este projeto foi feito como trabalho final da disciplina de Arquitetura de Software, lecionada pelo professor Carlos Mar, no Instituto Federal do Amazonas <i>Campus</i> Manaus Zona Leste (IFAM CMZL). Foi desenvolvido pelos alunos Carlos Gabriel, Lucas Castro, Marcos Vinícius e Mayara Silva, e foi desenvolvido usando a Arquitetura de Microsserviços.
 
 ## :brain: PRINCÍPIOS E PADRÕES DE PROJETO UTILIZADOS
-  - [x] Descrição do Item
-  - [x] Descrição do Item
-  - Serviço de Atualização = No modulo de atualização não utiliza-se a criação de classes ou objetos, apenas funções, não foi utilizado nenhum padrão de projeto pois não se observou a necessidade ou mesmo utilidade eficiente para o código. O princípio de responsabilidade única onde o serviço faz apenas o que corresponde a sua responsabilidade foi utilizado no modulo. Respeitando o contexto do modulo e tornando o modulo coeso.
-  - [x] Descrição do Item
-  - [x] Descrição do Item
+  - [x] Foi usado singleton na comunicação entre API do GitHub e API da aplicação, ou seja, toda a troca de informação é feita por intermédio da API da aplicação, criando assim, um único canal de comunicação entre as aplicações.
+  - [x] Encapsulamento de elementos do DOM é uma das funcionalidades do Styled Components, o que faz com que estilizações, mesmo que com nomes de classes iguais de outros componentes, sejam aplicadas somente ao componente em questão.
+  - [x] No modulo de atualização não foi utilizado a criação de classes ou objetos, apenas funções, não foi utilizado nenhum padrão de projeto pois não se observou a necessidade ou mesmo utilidade eficiente para o código. O princípio de responsabilidade única onde o serviço faz apenas o que corresponde a sua responsabilidade foi utilizado no modulo. Respeitando o contexto do modulo e tornando o modulo coeso.
+  - [x] Todos os serviços utilizam acoplamento aceitável, ou seja, a execução de tarefas nos serviços e a requisição e resposta de dados eram feitas apenas por meio de chamadas RPC, com o gRPC.
 
 ## :star2: FUNCIONALIDADES
-  - Serviço de FrontEnd = Lucas Castro
+### Serviço de FrontEnd - Lucas Castro
+O serviço de FrontEnd da aplicação é responsável pela apresentação de dados ao usuário. O serviço é construído usando as bibliotecas React e Styled Components, e os frameworks NextJS e Material UI. O serviço conta com uma interface agradável para visualização das vagas e com um sistema de filtragem baseada nas labels de cada issue do repositório. O serviço tamnbém conta com uma interface modal para inscrição do email no serviço de notificação, assim, o usuário ficará sabendo de novas vagas que venham a ser abertas no repositório.
+
+### Serviço de Issues - Marcos Vinícius
+Esse serviço realiza a busca e tratamento das vagas de emprego que são disponibilizadas em formato de Issues no github, a função que realiza essa atividade foi denominada GetIssue e somente é responsável por fazer a requisição e retorno dos dados, para os demais serviços e também o frontend, essa função foi desenvolvida utilizado a biblioteca Axios para realizar requisições a Api do Github, juntamente com a biblioteca GRPC por ser uma ferramenta de transmissão de dados de forma rápida com baixa latência.
+
+### Serviço de Atualização - Carlos Gabriel
+O serviço de atualização funciona a partir de uma função principal e uma auxiliar. A função principal “getAtualiza”, faz uma requisição a API do GitHub através do backend para obter dados das vagas registradas, essa requisição retornara um arquivo JSON contendo dados das últimas “issues” registradas no repositório. Então é solicitado a função auxiliar “DatasHoje” que retorna a data atual e a data do dia anterior no fuso horário de referência “UTC” gerando um intervalo de vinte e quatro horas que será usado pra analisar as novas vagas nesse período de tempo. Então um laço “for” com um “if” dentro da função principal irá comparar as datas de cada vaga registrada com as do arquivo JSON e se caso tiver sido registrada no intervalo de 24 horas irá adicionar um valor a uma variável de inteiros “QuantiNovVag”, quando terminar a função principal retornara essa variável de inteiros com a quantidade de novas vagas.
+
+### Serviço de Email - Mayara Silva
 Descrição do Módulo
-  - Serviço de Issues = Esse serviço realiza a busca e tratamento das vagas de emprego que são disponibilizadas em formato de Issues no github, a função que realiza essa atividade foi denominada GetIssue e somente é responsável por fazer a requisição e retorno dos dados, para os demais serviços e também o frontend, essa função foi desenvolvida utilizado a biblioteca Axios para realizar requisições a Api do Github, juntamente com a biblioteca GRPC por ser uma ferramenta de transmissão de dados de forma rápida com baixa latência. 
-Descrição do Módulo
-  - Serviço de Atualização = Carlos Gabriel
-Descrição do Módulo: O serviço de atualização funciona a partir de uma função principal e uma auxiliar. A função principal “getAtualiza”, faz uma requisição a API do GitHub através do backend para obter dados das vagas registradas, essa requisição retornara um arquivo JSON contendo dados das últimas “issues” registradas no repositório. Então é solicitado a função auxiliar “DatasHoje” que retorna a data atual e a data do dia anterior no fuso horário de referência “UTC” gerando um intervalo de vinte e quatro horas que será usado pra analisar as novas vagas nesse período de tempo. Então um laço “for” com um “if” dentro da função principal irá comparar as datas de cada vaga registrada com as do arquivo JSON e se caso tiver sido registrada no intervalo de 24 horas irá adicionar um valor a uma variável de inteiros “QuantiNovVag”, quando terminar a função principal retornara essa variável de inteiros com a quantidade de novas vagas.
-  - Serviço de Email = Mayara Silva
-Descrição do Módulo
-  - Serviço de Persistência = Mayara Silva
+
+### Serviço de Persistência - Mayara Silva
 Descrição do Módulo
 
 ## :twisted_rightwards_arrows: DIAGRAMA DO SISTEMA
